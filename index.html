@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiGen | ICCV 2025 Workshop</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            overflow-x: hidden;
+        }
+
+        #tsparticles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+
+        header {
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 0;
+        }
+
+        h1 span {
+            transition: color 0.3s ease;
+        }
+
+        .highlight {
+            color: #58a6ff;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(22,27,34,0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            color: #58a6ff;
+        }
+
+        .schedule {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .schedule th, .schedule td {
+            padding: 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .schedule th {
+            background-color: rgba(88,166,255,0.2);
+            color: #58a6ff;
+        }
+
+        .people {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .person {
+            width: 130px;
+            text-align: center;
+        }
+
+        .person img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .person img:hover {
+            transform: scale(1.15);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        @media(max-width:600px){
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="tsparticles"></div>
+
+<header>
+    <h1>
+        <span id="H">H</span>uman-<span id="I">I</span>nteractive <span id="Gen">Gen</span>eration and Editing
+    </h1>
+    <p style="font-size: 30px;">ICCV 2025 Workshop (HiGen)</p>
+</header>
+
+<section id="abstract">
+    <h2>Abstract</h2>
+    <p><!-- Abstract goes here --></p>
+</section>
+
+<section id="schedule">
+    <h2>Schedule</h2>
+    <table class="schedule">
+        <tr><th>Time</th><th>Event</th><th>Speaker</th></tr>
+        <tr><td>09:00-09:10</td><td>Introduction and Opening Remarks</td><td>Organizers</td></tr>
+        <tr><td>09:10-09:40</td><td>Invited Talk 1</td><td>Speaker Name</td></tr>
+        <tr><td>09:40-10:10</td><td>Invited Talk 2</td><td>Speaker Name</td></tr>
+        <tr><td>10:10-10:25</td><td>Coffee Break</td><td>Speaker Name</td></tr>
+        <tr><td>10:25-10:55</td><td>Invited Talk 3</td><td>Speaker Name</td></tr>
+        <tr><td>10:55-11:10</td><td>Invited Talk 4</td><td>Speaker Name</td></tr>
+        <tr><td>11:10-11:25</td><td>Invited Talk 5</td><td>Speaker Name</td></tr>
+        <tr><td>11:25-12:15</td><td>Poster Session</td><td>-</td></tr>
+        <tr><td>12:15-13:00</td><td>Lunch Break</td><td>-</td></tr>
+        <!-- More rows as needed -->
+    </table>
+</section>
+
+<section id="speakers">
+    <h2>Speakers</h2>
+    <div class="people">
+        <div class="person">
+            <img src="YOUR_IMAGE_URL" alt="Speaker Name">
+            <p><strong>Speaker Name</strong><br>Institution</p>
+        </div>
+        <!-- More speakers -->
+    </div>
+</section>
+
+<section id="organizers">
+    <h2>Organizers</h2>
+    <div class="people">
+        <div class="person">
+            <img src="YOUR_IMAGE_URL" alt="Organizer Name">
+            <p><strong>Organizer Name</strong><br>Institution</p>
+        </div>
+        <!-- More organizers -->
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 HiGen Workshop @ ICCV
+</footer>
+
+<script>
+    // tsparticles config - abstract robotic hand effect
+    tsParticles.load("tsparticles", {
+        fpsLimit: 60,
+        particles: {
+            number: { value: 150 },
+            size: { value: 2 },
+            move: { enable: true, speed: 1, direction: "none", random: true },
+            opacity: { value: 0.5 },
+            links: {
+                enable: true,
+                distance: 100,
+                color: "#58a6ff",
+                opacity: 0.1,
+                width: 1
+            },
+            color: { value: "#58a6ff" }
+        },
+        interactivity: {
+            detectsOn: "canvas",
+            events: {
+                onHover: { enable: true, mode: "repulse" }
+            },
+            modes: {
+                repulse: { distance: 80 }
+            }
+        },
+        retina_detect: true
+    });
+
+    // Loop highlight animation for H, I, Gen
+    const letters = ['H', 'I', 'Gen'];
+    let current = 0;
+
+    function highlightLoop(){
+        letters.forEach((id, idx) => {
+            document.getElementById(id).classList.toggle('highlight', idx === current);
+        });
+        current = (current + 1) % letters.length;
+    }
+
+    setInterval(highlightLoop, 1500);
+    highlightLoop(); // Initial call
+</script>
+
+</body>
+</html>
