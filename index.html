@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HiGen | ICCV 2025 Workshop</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
     <style>
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', 'Montserrat', sans-serif;
             background-color: #0d1117;
             color: #c9d1d9;
             overflow-x: hidden;
@@ -25,12 +25,39 @@
             left: 0;
         }
 
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px;
+            background-color: rgba(13,17,23,0.9);
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        nav a {
+            color: #c9d1d9;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #58a6ff;
+        }
+
         header {
-            padding: 100px 20px;
+            padding: 150px 20px 20px;
             text-align: center;
             position: relative;
         }
-
+        header img.logo {
+            width: 300px;
+            margin-bottom: 10px;
+        }
         h1 {
             font-size: 4rem;
             font-weight: 700;
@@ -46,7 +73,7 @@
         }
 
         section {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 40px auto;
             padding: 20px;
             background: rgba(22,27,34,0.85);
@@ -107,33 +134,94 @@
             font-size: 0.85rem;
         }
 
+        .about p {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            text-align: justify;
+            text-align-last: left;
+            hyphens: auto;
+            margin-left: 25px;
+            margin-right: 25px;
+        }
+        .submission-content {
+            text-align: left;
+            margin: 20px 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #58a6ff;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #1f6feb;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: none;
+            border-radius: 12px;
+            margin-top: 15px;
+        }
+
         @media(max-width:600px){
             h1 { font-size: 2rem; }
+            nav { flex-direction: column; gap: 10px; }
         }
     </style>
 </head>
 <body>
 
 <div id="tsparticles"></div>
+<nav>
+    <a href="#abstract">About</a>
+    <a href="#schedule">Schedule</a>
+    <a href="#speakers">Speakers</a>
+    <a href="#submission">Call for Papers</a>
+    <a href="#organizers">Organizers</a>
+    <a href="#contact">Contact</a>
+</nav>
 
 <header>
+    <img src="static/iccv.svg" alt="HiGen Logo" class="logo">
     <h1>
         <span id="H">H</span>uman-<span id="I">I</span>nteractive <span id="Gen">Gen</span>eration and Editing
     </h1>
     <p style="font-size: 30px;">ICCV 2025 Workshop (HiGen)</p>
 </header>
 
-<section id="abstract">
-    <h2>Abstract</h2>
-    <p><!-- Abstract goes here --></p>
+<section id="abstract" class="about">
+    <h2>About</h2>
+    <p>
+        The rapid evolution of generative AI has reshaped content creation across images, video, and 3D/4D visuals. 
+        This workshop focuses on cutting-edge methodologies, practical applications, and open challenges in image/video/3D/4D generation and related editing tasks with an emphasis on flexible and friendly human interactions and multi-modal control signals.
+        This workshop will serve as a platform for researchers and practitioners to discuss key topics related to visual content creation and editing with versatile interactions
+    </p>
 </section>
+
+
 
 <section id="schedule">
     <h2>Schedule</h2>
     <table class="schedule">
         <tr><th>Time</th><th>Event</th><th>Speaker</th></tr>
         <tr><td>09:00-09:10</td><td>Introduction and Opening Remarks</td><td>Organizers</td></tr>
-        <tr><td>09:10-09:40</td><td>Invited Talk 1</td><td>TBD</td></tr>
+        <tr><td>09:10-09:40</td><td>Invited Talk 1: Efficient High-resolution Image Generation with Diffusion Models and Acceleration</td><td>Enze Xie</td></tr>
         <tr><td>09:40-10:10</td><td>Invited Talk 2</td><td>TBD</td></tr>
         <tr><td>10:10-10:25</td><td>Coffee Break</td><td>-</td></tr>
         <tr><td>10:25-10:55</td><td>Invited Talk 3</td><td>TBD</td></tr>
@@ -158,27 +246,80 @@
     <h2>Speakers</h2>
     <div class="people">
         <div class="person">
-            <img src=images/junyan_zhu.jpg alt="Jun-Yan Zhu">
-            <!-- <p><strong>Jun-Yan Zhu</strong><br>Carnegie Mellon University</p> -->
-            <p><strong>Jun-Yan Zhu</strong><br>CMU</p>
+            <img src=images/patrick_esser.jpeg alt="Patrick Esser">
+            <p><strong>Patrick Esser</strong><br>BFL</p>
+        </div>
+        <div class="person">
+            <img src=images/yanpei_cao.jpg alt="Yanpei Cao">
+            <p><strong>Yanpei Cao</strong><br>VAST</p>
         </div>
         <div class="person">
             <img src=images/enze_xie.jpg alt="Enze Xie">
             <p><strong>Enze Xie</strong><br>NVIDIA</p>
         </div>
         <div class="person">
-            <img src=images/patrick_esser.jpeg alt="Patrick Esser">
-            <p><strong>Patrick Esser</strong><br>BFL</p>
-        </div>
-        <div class="person">
             <img src=images/xintao_wang.jpg alt="Xintao Wang">
             <p><strong>Xintao Wang</strong><br>Kuaishou</p>
         </div>
         <div class="person">
+            <img src=images/jimei_yang.jpg alt="Jimei Yang">
+            <p><strong>Jimei Yang</strong><br>Runway</p>
+        </div>
+        <div class="person">
+            <img src=images/saining_xie.png alt="Saining Xie">
+            <p><strong>Saining Xie</strong><br>NYU</p>
+        </div>
+        <div class="person">
+            <img src=images/sooye_kim.png alt="Soo Ye Kim">
+            <p><strong>Soo Ye Kim</strong><br>Adobe</p>
+        </div>
+        <div class="person">
+            <img src=images/junyan_zhu.jpg alt="Jun-Yan Zhu">
+            <p><strong>Jun-Yan Zhu</strong><br>CMU</p>
+        </div>
+
+        <div class="person">
             <img src=images/Kristen_Grauman.png alt="Kristen Grauman">
             <p><strong>Kristen Grauman</strong><br>UT Austin</p>
         </div>
+        <div class="person">
+            <img src=images/Jiajun_Wu.jpg alt="Jiajun Wu">
+            <p><strong>Jiajun Wu</strong><br>Stanford University</p>
+        </div>
         <!-- More speakers -->
+    </div>
+</section>
+
+
+<section id="submission">
+    <h2>Call for Papers</h2>
+    <div class="submission-content">
+        
+        <p>The HiGen workshop invites full paper submissions (up to 8 pages, including figures and tables but excluding references), as well as abstracts and position papers of up to 4 pages (excluding references).</p>
+        
+        <h3>Submission Guidelines</h3>
+        <ul>
+            <li>All papers must be submitted via the ICCV 2025 OpenReview workshop website.</li>
+            <li>Submission should be PDF format and follow the official <a href="https://media.eventhosts.cc/Conferences/ICCV2025/ICCV2025-Author-Kit-Feb.zip">ICCV 2025 template</a> and guidelines.</li>
+            <li>Authors may upload optional supplementary materials, containing additional details, videos, images, etc.</li>
+            <li>Papers should follow the ICCV author guidelines and be anonymized for double-blind review.</li>
+            <li>The accepted papers will be presented as oral, or poster presentations.</li>
+            <li>Accepted papers will be published in the official ICCV workshop proceedings.</li>
+            <li>The presentation of accepted papers at our workshop will follow the same policy as that for the accepted papers at the ICCV 2025 leading conference.</li>
+            <li>Two Best Paper Awards will be granted to the most outstanding contributions, selected based on originality, technical merit, and potential impact from the accepted papers.</li>
+        </ul>
+
+
+        <h3>Topics</h3>
+        <p>Topics of interests include, but are not limited to:</p>
+        <ul>
+            <li>Interactive content creation and editing</li>
+            <li>Controllable generation with multi-modal interaction</li>
+            <li>Cross-domain cooperation for visual generative models</li>
+            <li>Generative world exploration and human object interaction</li>
+            <li>Foundational designs (pipeline, model, operator, etc.) for AIGC</li>
+        </ul>
+        <a href="https://openreview.net/group?id=thecvf.com/ICCV/2025/Workshop/HiGen#tab-your-consoles" class="btn">Submission Portal</a>
     </div>
 </section>
 
@@ -202,8 +343,32 @@
             <p><strong>Xin Yu</strong><br>HKU</p>
         </div>
         <div class="person">
+            <img src=images/yuanhao_cai.png alt="Yuanhao Cai">
+            <p><strong>Yuanhao Cai</strong><br>JHU</p>
+        </div>
+        <div class="person">
+            <img src=images/tianyu_wang.jpeg alt="Tianyu Wang">
+            <p><strong>Tianyu Wang</strong><br>Adobe</p>
+        </div>
+        <div class="person">
             <img src=images/hengshuang_zhao.png alt="Hengshuang Zhao">
             <p><strong>Hengshuang Zhao</strong><br>HKU</p>
+        </div>
+        <div class="person">
+            <img src=images/xiaojuan_qi.jpg alt="Xiaojuan Qi">
+            <p><strong>Xiaojuan Qi</strong><br>HKU</p>
+        </div>
+        <div class="person">
+            <img src=images/scott_cohen.jpg alt="Scott Cohen">
+            <p><strong>Scott Cohen</strong><br>Adobe</p>
+        </div>
+        <div class="person">
+            <img src=images/Radu_Timofte.png alt="Radu Timofte">
+            <p><strong>Radu Timofte</strong><br>University of Würzburg</p>
+        </div>
+        <div class="person">
+            <img src=images/yuille.jpg alt="Alan Yuille">
+            <p><strong>Alan Yuille</strong><br>JHU</p>
         </div>
         <div class="person">
             <img src=images/zhe_lin.jpg alt="Zhe Lin">
@@ -211,6 +376,12 @@
         </div>
         <!-- More organizers -->
     </div>
+</section>
+
+<section id="contact">
+    <h2>Find Us</h2>
+    <iframe src="https://maps.google.com/maps?q=Hawaii%20Convention%20Center&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
+    <p style="text-align:center; margin-top:20px;">Contact us at: <a href="mailto:higen2025@iccv.org" style="color:#58a6ff;">xichen.csai@gmail.com</a></p>
 </section>
 
 <footer>
