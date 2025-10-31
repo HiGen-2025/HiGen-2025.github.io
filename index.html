@@ -244,6 +244,100 @@
                 display: flex;
             }
         }
+        /* ===== Recap / Highlights ===== */
+        .recap {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px 20px 28px;
+            background: rgba(22,27,34,0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+        .recap h2 {
+            text-align: center;
+            color: #58a6ff;
+            margin-top: 0;
+        }
+
+        /* 统计指标 */
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0,1fr));
+            gap: 16px;
+            margin: 16px 0 6px;
+        }
+        @media (max-width: 900px){
+            .metrics { grid-template-columns: repeat(2, minmax(0,1fr)); }
+        }
+        @media (max-width: 520px){
+            .metrics { grid-template-columns: 1fr; }
+        }
+        .metric {
+            background: rgba(13,17,23,0.6);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 12px;
+            padding: 18px 16px;
+            text-align: center;
+        }
+        .metric .num {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #58a6ff;
+            line-height: 1.1;
+        }
+        .metric .label {
+            margin-top: 6px;
+            color: #9aa4ae;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* 横向滚动相册（scroll-snap） */
+        .recap-photos {
+            margin-top: 18px;
+        }
+        .scroller {
+            display: flex;
+            gap: 0px;
+            overflow-x: auto;
+            padding: 8px 4px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+        }
+        .scroller::-webkit-scrollbar { height: 8px; }
+        .scroller::-webkit-scrollbar-thumb {
+            background: rgba(255,255,255,0.15);
+            border-radius: 999px;
+        }
+        .scroller .shot {
+            flex: 0 0 auto;
+            width: clamp(260px, 38vw, 420px);
+            height: clamp(160px, 26vw, 260px);
+            border-radius: 12px;
+            overflow: hidden;
+            scroll-snap-align: start;
+            background: #0e131a;
+            border: 1px solid rgba(255,255,255,0.06);
+            position: relative;
+        }
+        .scroller .shot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display:block;
+            transition: transform .35s ease;
+        }
+        .scroller .shot:hover img { transform: scale(1.04); }
+
+        /* 相册小标题/说明 */
+        .recap-sub {
+            margin: 8px 2px 2px;
+            color: #9aa4ae;
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
     </style>
 </head>
 <body>
@@ -253,6 +347,7 @@
     <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
     <div class="nav-links">
         <a href="#abstract">About</a>
+        <a href="#recap">Recap</a>
         <a href="#schedule">Schedule</a>
         <a href="#speakers">Speakers</a>
         <a href="#submission">Call for Papers</a>
@@ -282,6 +377,57 @@
     </p>
 </section>
 
+
+<section id="recap" class="recap">
+  <h2>Recap & Highlights</h2>
+
+  <!-- 指标统计：把 data-target 改成真实数字 -->
+  <div class="metrics">
+    <div class="metric">
+      <div class="num" data-count data-target="360">0</div>
+      <div class="label">On-site Attendees</div>
+    </div>
+    <div class="metric">
+      <div class="num" data-count data-target="36">0</div>
+      <div class="label">Accepted Papers</div>
+    </div>
+    <div class="metric">
+      <div class="num" data-count data-target="5">0</div>
+      <div class="label">Best Papers & Orals</div>
+    </div>
+    <div class="metric">
+      <div class="num" data-count data-target="31">0</div>
+      <div class="label">Posters</div>
+    </div>
+  </div>
+
+
+
+  <!-- 横向滚动照片廊：把 src 改成你的真实照片路径 -->
+  <div class="recap-photos">
+    <div class="scroller" aria-label="Workshop photo highlights">
+      <figure class="shot">
+        <img src="images/recap/IMG_8986 2.png" alt="Networking break" loading="lazy">
+      </figure>
+      <figure class="shot">
+        <img src="images/recap/IMG_8956 2.png" alt="Packed audience during keynote" loading="lazy">
+      </figure>
+      <figure class="shot">
+        <img src="images/recap/IMG_8959 2.png" alt="Poster session highlights" loading="lazy">
+      </figure>
+      <figure class="shot">
+        <img src="images/recap/IMG_8965 2.png" alt="Panel and Q&A" loading="lazy">
+      </figure>
+      <figure class="shot">
+        <img src="images/recap/IMG_8967.png" alt="Best paper awards" loading="lazy">
+      </figure>
+      <figure class="shot">
+        <img src="images/recap/IMG_8973.png" alt="Networking break" loading="lazy">
+      </figure>
+    </div>
+    <p class="recap-sub">Swipe / scroll → to see more photos</p>
+  </div>
+</section>
 
 
 <section id="schedule">
@@ -609,6 +755,59 @@
     function toggleMenu() {
         document.querySelector('.nav-links').classList.toggle('active');
     }
+    (function(){
+    const counters = document.querySelectorAll('[data-count]');
+    if (!counters.length) return;
+
+    const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+    const animateCount = (el) => {
+      const target = Number(el.getAttribute('data-target') || 0);
+      const duration = 1400; // ms
+      const start = performance.now();
+
+      function tick(now){
+        const p = Math.min(1, (now - start) / duration);
+        const eased = easeOutCubic(p);
+        const val = Math.floor(eased * target);
+        el.textContent = val.toLocaleString();
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = target.toLocaleString();
+      }
+      requestAnimationFrame(tick);
+    };
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.querySelectorAll('[data-count]').forEach(animateCount);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const recap = document.getElementById('recap');
+    if (recap) io.observe(recap);
+  })();
+
+  // === 横向滚动照片：键盘左右键支持（可选） ===
+  (function(){
+    const scroller = document.querySelector('#recap .scroller');
+    if (!scroller) return;
+
+    scroller.setAttribute('tabindex','0'); // 可聚焦
+    scroller.addEventListener('keydown', (e)=>{
+      if (e.key === 'ArrowRight') scroller.scrollBy({left: 300, behavior: 'smooth'});
+      if (e.key === 'ArrowLeft')  scroller.scrollBy({left: -300, behavior: 'smooth'});
+    });
+
+    // 桌面端拖拽滚动（可选）
+    let isDown=false, startX=0, startLeft=0;
+    scroller.addEventListener('pointerdown', (e)=>{ isDown=true; scroller.setPointerCapture(e.pointerId); startX=e.clientX; startLeft=scroller.scrollLeft; });
+    scroller.addEventListener('pointermove', (e)=>{ if(!isDown) return; scroller.scrollLeft = startLeft - (e.clientX - startX); });
+    scroller.addEventListener('pointerup',   ()=>{ isDown=false; });
+    scroller.addEventListener('pointercancel', ()=>{ isDown=false; });
+  })();
 </script>
 
 </body>
