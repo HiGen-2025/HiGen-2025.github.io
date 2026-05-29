@@ -455,6 +455,72 @@
             font-weight: 600;
         }
 
+        /* Paper List */
+        .paper-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .paper-list li {
+            padding: 18px 20px;
+            border-bottom: 1px solid rgba(102,126,234,0.1);
+            transition: background 0.2s ease;
+        }
+
+        .paper-list li:last-child {
+            border-bottom: none;
+        }
+
+        .paper-list li:hover {
+            background: rgba(102,126,234,0.04);
+        }
+
+        .paper-title {
+            font-weight: 600;
+            color: #2d3436;
+            font-size: 1.02rem;
+            line-height: 1.5;
+        }
+
+        .paper-title a {
+            color: #667eea;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .paper-title a:hover {
+            color: #764ba2;
+            text-decoration: underline;
+        }
+
+        .paper-authors {
+            margin-top: 6px;
+            font-size: 0.92rem;
+            color: #718096;
+            line-height: 1.5;
+        }
+
+        .paper-note {
+            text-align: center;
+            color: #718096;
+            font-size: 0.95rem;
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(102,126,234,0.05);
+            border-radius: 10px;
+        }
+
+        .paper-note a {
+            color: #667eea;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .paper-note a:hover {
+            text-decoration: underline;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -491,6 +557,7 @@
         <a href="#schedule">Schedule</a>
         <a href="#submission">Call for Papers</a>
         <a href="#organizers">Organizers</a>
+        <a href="#papers">Accepted Papers</a>
         <a href="#contact">Contact</a>
         <a href="iccv2025.html" class="past-link">Past: 1st HiGen @ ICCV 2025</a>
     </div>
@@ -545,12 +612,12 @@
                 <p><strong>Enze Xie</strong><br>NVIDIA</p>
             </a>
         </div>
-        <!-- <div class="person">
-            <a href="https://www.xunhuang.me/" target="_blank">
-                <img src=images/xunhuang.jpg alt="Xun Huang">
-                <p><strong>Xun Huang</strong><br></p>
+        <div class="person">
+            <a href="https://scholar.google.com/citations?user=-T8wTEMAAAAJ&hl=en" target="_blank">
+                <img src=images/ShyamalBuch.jpeg alt="Shyamal Buch">
+                <p><strong>Shyamal Buch</strong><br>Luma AI</p>
             </a>
-        </div> -->
+        </div>
         <!-- <div class="person">
             <a href="https://www.sainingxie.com/" target="_blank">
                 <img src=images/saining_xie.png alt="Saining Xie">
@@ -589,21 +656,21 @@
     <table class="schedule">
         <tr><th>Time</th><th>Event</th><th>Speaker</th></tr>
         <tr><td>09:00-09:10</td><td>Introduction and Opening Remarks</td><td>Organizers</td></tr>
-        <tr><td>09:10-09:40</td><td>Invited Talk 1: </td><td></td></tr>
-        <tr><td>09:40-10:10</td><td>Invited Talk 2: </td><td></td></tr>
+        <tr><td>09:10-09:40</td><td>Invited Talk 1: </td><td>Enze Xie</td></tr>
+        <tr><td>09:40-10:10</td><td>Invited Talk 2: </td><td>Kristen Grauman</td></tr>
         <tr><td>10:10-10:25</td><td>Coffee Break</td><td>-</td></tr>
         <tr><td>10:25-10:55</td><td>Best Paper Talk </td><td></td></tr>
-        <tr><td>10:55-11:25</td><td>Invited Talk 4: </td><td></td></tr>
+        <tr><td>10:55-11:25</td><td>Invited Talk 3: </td><td>Shuyang Sun</td></tr>
         <tr><td>11:25-12:15</td><td>Poster Session</td><td>-</td></tr>
         <tr><td>12:15-13:30</td><td>Lunch Break</td><td>-</td></tr>
-        <tr><td>13:30-14:00</td><td>Invited Talk 5: </td><td></td></tr>
-        <tr><td>14:00-14:30</td><td>Invited Talk 6: </td><td></td></tr>
+        <tr><td>13:30-14:00</td><td>Invited Talk 4: </td><td>Jack Parker-Holder</td></tr>
+        <tr><td>14:00-14:30</td><td>Invited Talk 5: </td><td>Jianming Zhang</td></tr>
         <tr><td>14:30-14:40</td><td>Coffee Break</td><td>-</td></tr>
         <tr><td>14:40-15:15</td><td>Oral Paper Presentations</td><td>-</td></tr>
-        <tr><td>15:15-15:45</td><td>Invited Talk 7: </td><td></td></tr>
-        <tr><td>15:45-16:15</td><td>Invited Talk 8: </td><td></td></tr>
-        <tr><td>16:15-16:45</td><td>Invited Talk 9: </td><td></td></tr>
-        <tr><td>16:45-17:15</td><td>Invited Talk 10: </td><td></td></tr>
+        <tr><td>15:15-15:45</td><td>Invited Talk 6: </td><td>Maneesh Agrawala</td></tr>
+        <tr><td>15:45-16:15</td><td>Invited Talk 7: </td><td>Shyamal Buch</td></tr>
+        <tr><td>16:15-16:45</td><td>Invited Talk 8: </td><td>Jiajun Wu</td></tr>
+        <tr><td>16:45-17:15</td><td>Invited Talk 9: </td><td>Haoqi Fan</td></tr>
         <tr><td>17:15-17:30</td><td>Closed Remarks</td><td>Organizers</td></tr>
     </table>
 </section>
@@ -742,6 +809,102 @@
                 <p><strong>Zhe Lin</strong><br>Adobe</p>
             </a>
         </div>
+    </div>
+</section>
+
+<section id="papers">
+    <h2>Accepted Papers</h2>
+
+    <h3 style="color: #667eea; margin-bottom: 15px; font-size: 1.3rem;">Non-Proceedings Track</h3>
+    <ol class="paper-list">
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1ILqsHpJMxCy_POim0uSBEnjCTIuBetu3/view?usp=sharing" target="_blank" rel="noopener noreferrer">SpaceTimePilot: Generative Rendering of Dynamic Scenes Across Space and Time</a></div>
+            <div class="paper-authors">Zhening Huang, Hyeonho Jeong, Xuelin Chen, Yulia Gryaditskaya, Tuanfeng Yang Wang, Joan Lasenby, Chun-Hao Paul Huang</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1AWETotVQmAWRA9WBeThG1WKeG4WH-LOt/view?usp=sharing" target="_blank" rel="noopener noreferrer">Vanast: Virtual Try-On with Human Image Animation via Synthetic Triplet Supervision</a></div>
+            <div class="paper-authors">Hyunsoo Cha, Wonjung Woo, Byungjun Kim, Hanbyul Joo</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1cJIOkMRwwROldKA9drlG6kaOn6Ka2KDz/view?usp=sharing" target="_blank" rel="noopener noreferrer">RefDecoder: Enhancing Visual Generation with Conditional Video Decoding</a></div>
+            <div class="paper-authors">Xiang Fan, Yuheng Wang, Bohan Fang, Jason Ren, Ranjay Krishna</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1NpYxlBcfPAP_Ai2jiHD7v-t2a2nhtb_S/view?usp=sharing" target="_blank" rel="noopener noreferrer">InstructMix2Mix: Consistent Sparse-View Editing Through Multi-View Model Personalization</a></div>
+            <div class="paper-authors">Daniel Gilo, Or Litany</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1B6uVO8KC-C_67kNKbkgkUSbcmiSlMPC4/view?usp=sharing" target="_blank" rel="noopener noreferrer">Cubic Discrete Diffusion: Discrete Visual Generation on High-Dimensional Representation Tokens</a></div>
+            <div class="paper-authors">Yuqing Wang, Chuofan Ma, Zhijie Lin, Yao Teng, Lijun Yu, Shuai Wang, Jiaming Han, Jiashi Feng, Yi Jiang, Xihui Liu</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1qs5M9Z9BBr7gqKJn_dewEToGXV4yu5Fx/view?usp=sharing" target="_blank" rel="noopener noreferrer">EgoControl: Controllable Egocentric Video Generation via 3D Full-Body Poses</a></div>
+            <div class="paper-authors">Enrico Pallotta, Sina Mokhtarzadeh Azar, Lars Doorenbos, Serdar Ozsoy, Umar Iqbal, Juergen Gall</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1Tnc8CMm9c6AY0k2OlJPawuKK68kfBmqP/view?usp=sharing" target="_blank" rel="noopener noreferrer">Routing Matters in MoE: Scaling Diffusion Transformers with Explicit Routing Guidance</a></div>
+            <div class="paper-authors">Yujie Wei, Shiwei Zhang, Hangjie Yuan, Yujin Han, Zhekai Chen, Jiayu Wang, Difan Zou, Xihui Liu, Yingya Zhang, Yu Liu, Hongming Shan</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1mCQps9b4c932BrQ4nr1A8ja1mKki18mT/view?usp=sharing" target="_blank" rel="noopener noreferrer">Building a Precise Video Language with Human–AI Oversight</a></div>
+            <div class="paper-authors">Siyuan Cen, Hewei Wang, Chancharik Mitra, Isaac Li, Yuhan Huang, Yu Tong Tiffany Ling, Irene Pi, Shihang Zhu, Yili Han, Yilun Du, Deva Ramanan, Zhiqiu Lin</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1HtYHGojp1ivABlXtkAwFonuxCU8D4XC2/view?usp=sharing" target="_blank" rel="noopener noreferrer">HandX: Scaling Bimanual Motion and Interaction Generation</a></div>
+            <div class="paper-authors">Zimu Zhang, Yucheng Zhang, Xiyan Xu, Ziyin Wang, Sirui Xu, Kai Zhou, Bing Zhou, Chuan Guo, Jian Wang, Yu-Xiong Wang, Liangyan Gui</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1Y8_WN52_TLHwYgSbgSwgPDvs6fOGjki_/view?usp=sharing" target="_blank" rel="noopener noreferrer">InterPrior: Scaling Generative Control for Physics-Based Human-Object Interactions</a></div>
+            <div class="paper-authors">Sirui Xu, Samuel Schulter, Morteza Ziyadi, Xialin He, Xiaohan Fei, Yu-Xiong Wang, Liangyan Gui</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1hDhb2fWv9xzzvh0YhTSyPLhvwb2-Sv0q/view?usp=sharing" target="_blank" rel="noopener noreferrer">Masked Generative Transformer Is What You Need for Image Editing</a></div>
+            <div class="paper-authors">Wei Chow, Linfeng Li, Xian Sun, Lingdong Kong, Zefeng Li, Qi Xu, Hang Song, Tian Ye, Xian Wang, Jinbin Bai, Shilin Xu, Xiangtai Li, Junting Pan, Shaoteng Liu, Ran Zhou, Tianshu Yang, Songhua Liu</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1SNubqQMMoA62OM1j0uSy1vGurvt8wPDQ/view?usp=sharing" target="_blank" rel="noopener noreferrer">Durian: Dual Reference Image-Guided Portrait Animation with Attribute Transfer</a></div>
+            <div class="paper-authors">Hyunsoo Cha, Byungjun Kim, Hanbyul Joo</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1g_76WA6OMbOO67dedn8bB2IcB6KyC7bg/view?usp=sharing" target="_blank" rel="noopener noreferrer">VerbalValue: A Socially Intelligent Virtual Host for Sales-Driven Live Commerce</a></div>
+            <div class="paper-authors">Yuyan Chen</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/164FeM6uWkBIRfDqnbwhWP_peUzUqt8Rg/view?usp=sharing" target="_blank" rel="noopener noreferrer">Adaptive Auxiliary Prompt Blending for Target-Faithful Diffusion Generation</a></div>
+            <div class="paper-authors">Kwanyoung Lee, SeungJu Cha, Yebin Ahn, Hyunwoo Oh, Sungho Koh, Dong-Jin Kim</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1RvEysipyRHhdEc5o8iweGTUoxw0yiMte/view?usp=sharing" target="_blank" rel="noopener noreferrer">Object Complexity-Driven Active Reconstruction Using Gaussian Splatting</a></div>
+            <div class="paper-authors">Changjo Choi, Seunghwan Lee, Gyuho Eoh</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1cVx0v4aOAHKoAOqriV8UNKu1_2fppbEH/view?usp=sharing" target="_blank" rel="noopener noreferrer">CINESCENE: Implicit 3D as Effective Scene Representation for Cinematic Video Generation</a></div>
+            <div class="paper-authors">Kaiyi Huang, Yukun Huang, Yu Li, Jianhong Bai, Xintao Wang, Zinan Lin, Xuefei Ning, Jiwen Yu, Pengfei Wan, Yu Wang, Xihui Liu</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1rvMpqgFgAdrZhSv1yDO7PawdzHNFxngw/view?usp=sharing" target="_blank" rel="noopener noreferrer">AIGVE-Tool: AI-Generated Video Evaluation Toolkit with Multifaceted Benchmark</a></div>
+            <div class="paper-authors">Xinhao Xiang, Xiao Liu, Zizhong Li, Zhuosheng Liu, Jiawei Zhang</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1eckaWbyVi3tziWbIAvbn30NqeMD7E8lQ/view?usp=sharing" target="_blank" rel="noopener noreferrer">PROS: A Proactive Multimodal Refinement Agent for Scientific Posters</a></div>
+            <div class="paper-authors">Xingda Lyu, Xinye Luo, Honglin Lu, Shiqi Yang</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1Q9pd-4c35oC4sIoFW9T6Dj3d_wntahlS/view?usp=sharing" target="_blank" rel="noopener noreferrer">CritiqueEdit: A Critique-Driven Dataset and Planner for Photographic Image Editing</a></div>
+            <div class="paper-authors">Yen Hai Nguyen, Minh Tung Bui, Franck Dernoncourt, Trung Bui, Viet Dac Lai, Long Hoang Dang</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1sJPNY23-ii8VviZJvBpkFHqXzKbu9ke0/view?usp=sharing" target="_blank" rel="noopener noreferrer">AnimationBench: Are Video Models Good at Character-Centric Animation?</a></div>
+            <div class="paper-authors">Leyi Wu, Pengjun Fang, Kai Sun, Yazhou Xing, Yinwei Wu, Songsong Wang, Ziqi Huang, Dan Zhou, Yingqing He, Ying-Cong Chen, Qifeng Chen</div>
+        </li>
+        <li>
+            <div class="paper-title"><a href="https://drive.google.com/file/d/1h6dAxj7Mv5zFPaRaVH0hWVRjfWCVlMom/view?usp=sharing" target="_blank" rel="noopener noreferrer">Sudo Thermal Camera: Heat-Adjustable Generative Video From a Single RGB Image</a></div>
+            <div class="paper-authors">Wonseok Oh, Alan C. Bovik</div>
+        </li>
+    </ol>
+
+    <div class="paper-note">
+        📄 For Proceedings Track papers, please refer to the CVPR Official Workshop Proceedings.
     </div>
 </section>
 
